@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  todo-app:
+    build: .
+    container_name: todo-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/etc/todos   # persiste la base sqlite sur ta machine
+    restart: unless-stopped
