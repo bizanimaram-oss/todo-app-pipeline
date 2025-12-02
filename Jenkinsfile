@@ -11,20 +11,21 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Docker') {
             steps {
-                sh 'docker build -t todo-app .'
+                bat 'docker build -t todo-app .'
             }
         }
     }
 }
+
